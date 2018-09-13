@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+
+.App-text {
+  min-height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pd-vertical {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
