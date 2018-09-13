@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import { Header } from './components/Header';
-import { Button } from './components/Button';
-import { Subtitle } from './components/Subtitle';
-import { Title } from './components/Title';
+import { Header } from './components/Header/Header';
+import { Button } from './components/Button/Button';
+import { Subtitle } from './components/Subtitle/Subtitle';
+import { Title } from './components/Title/Title';
 
 class App extends Component {
   state = {
@@ -13,12 +13,14 @@ class App extends Component {
   };
 
   changeSize = () => {
+    console.log('Size');
     this.setState(state => ({
       useTitle: !state.useTitle
     }));
   };
 
   changeHeaderVisibility = () => {
+    console.log('Visibility');
     this.setState(state => ({
       showHeader: !state.showHeader
     }));
