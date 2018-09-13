@@ -1,5 +1,5 @@
 import React from 'react';
-import { asyncComponent } from '../../../utils/asyncComponent';
+import Loadable from 'react-loadable';
 
-const Component = asyncComponent(() => import('./Button'));
+const Component = Loadable({loader: () => import('./Button'), loading: () => <div>Loading...</div>});
 export const Button = props => <Component {...props} />;

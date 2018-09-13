@@ -1,5 +1,5 @@
 import React from 'react';
-import { asyncComponent } from '../../../utils/asyncComponent';
+import Loadable from 'react-loadable';
 
-const Component = asyncComponent(() => import('./Subtitle'));
+const Component = Loadable({loader: () => import('./Subtitle'), loading: () => <div>Loading...</div>});
 export const Subtitle = props => <Component {...props} />;

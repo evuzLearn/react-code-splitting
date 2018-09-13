@@ -1,5 +1,5 @@
 import React from 'react';
-import { asyncComponent } from '../../../utils/asyncComponent';
+import Loadable from 'react-loadable';
 
-const Component = asyncComponent(() => import('./Header'));
+const Component = Loadable({loader: () => import('./Header'), loading: () => <div>Loading...</div>});
 export const Header = props => <Component {...props} />;
