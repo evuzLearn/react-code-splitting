@@ -8,28 +8,34 @@ import { Title } from './components/Title';
 
 class App extends Component {
   state = {
-    useTitle: true
+    useTitle: true,
+    showHeader: false
   };
 
   changeSize = () => {
-    console.log('change');
     this.setState(state => ({
       useTitle: !state.useTitle
     }));
   };
 
+  changeHeaderVisibility = () => {
+    this.setState(state => ({
+      showHeader: !state.showHeader
+    }));
+  };
+
   render() {
-    const { useTitle } = this.state;
+    const { useTitle, showHeader } = this.state;
     const text = 'Hello Don Pepito';
-    console.log(useTitle);
     return (
       <div className="App">
-        <Header />
+        {showHeader ? <Header /> : null}
         <div className="pd-vertical App-text">
           {useTitle ? <Title>{text}</Title> : <Subtitle>{text}</Subtitle>}
         </div>
         <div className="pd-vertical">
           <Button onClick={this.changeSize}>Change Size</Button>
+          <Button onClick={this.changeHeaderVisibility}>Show/Hide Header</Button>
         </div>
       </div>
     );
